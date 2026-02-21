@@ -1,0 +1,16 @@
+void viewReport() {
+    string filename = "session_" + courseCode + "_" + date + ".txt";
+    ifstream file(filename);
+    string line;
+
+    if (!file) {
+        cout << "Session file not found!\n";
+        return;
+    }
+
+    while (getline(file, line)) {
+        cout << line << endl;
+    }
+
+    file.close();
+}
